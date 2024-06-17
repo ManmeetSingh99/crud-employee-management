@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Table</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Employee Management System</h1>
+    <div class="noDataFound"></div>
+    <div class="search-bar">
+      <input
+        type="search"
+        name=""
+        id="searchField"
+        placeholder="Search here..."
+      />
+      <button id="searchButton" onclick="searchEmployees()">Search</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Emp Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTableBody">
+        <!-- dynamic rows -->
+      </tbody>
+    </table>
+    <h1 id="noDataMsg">No Data Found with the matching values.</h1>
+
+    <div class="add-button-container">
+      <button class="add-button" onclick="openForm()">Add New Employee</button>
+    </div>
+
+    <!-- Popup Form -->
+    <div id="employeeForm" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <form class="popup-form" id="employeeFormSubmit">
+          <input type="hidden" id="employeeId" name="employeeId" />
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="mobile">Mobile No</label>
+          <input type="text" id="mobile" name="mobile" required />
+        </form>
+        <div class="save-button">
+          <button type="button" onclick="saveEmployee()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
